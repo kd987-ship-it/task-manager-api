@@ -1,20 +1,8 @@
 from flask import Flask
 
+from services.task_service import get_all_tasks
+
 app = Flask(__name__)
-
-
-tasks = [
-    {
-        "id": 1,
-        "title": "Learn Git",
-        "completed": False,
-    },
-    {
-        "id": 2,
-        "title": "Create first pull request",
-        "completed": False,
-    },
-]
 
 
 @app.route("/")
@@ -24,7 +12,7 @@ def home():
 
 @app.route("/tasks")
 def get_tasks():
-    return {"tasks": tasks}
+    return {"tasks": get_all_tasks()}
 
 
 if __name__ == "__main__":
