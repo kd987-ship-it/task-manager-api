@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return {"message": "Task Manager API is running"}
+    return {"message": "Task Manager API v2 is running"}
 
 
 @app.route("/tasks", methods=["GET"])
